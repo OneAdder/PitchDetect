@@ -78,17 +78,6 @@ window.onload = function() {
 	  	reader.readAsArrayBuffer(e.dataTransfer.files[0]);
 	  	return false;
 	};
-	
-	fetch('whistling3.ogg')
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error(`HTTP error, status = ${response.status}`);
-			}
-			return response.arrayBuffer();
-		}).then((buffer) => audioContext.decodeAudioData(buffer)).then((decodedData) => {
-			theBuffer = decodedData;
-		});
-
 }
 
 function startPitchDetect() {	
